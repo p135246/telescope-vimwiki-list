@@ -29,7 +29,7 @@ function M.vimwiki_list_picker(opts)
 					value = entry,
 					display = entry.name,
 					ordinal = entry.name,
-					path = entry.path .. '/index.md'
+					path = entry.path .. M.config.preview_file,
 				}
 			end,
 		},
