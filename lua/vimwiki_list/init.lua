@@ -5,6 +5,12 @@ local previewers = require('telescope.previewers')
 local actions = require('telescope.actions')
 local action_state = require('telescope.actions.state')
 
+local M = {
+	config = {
+		preview_file = 'index.md',
+	}
+}
+
 local get_vimwiki_list = function(opts)
 	local list = {}
 	for index, wiki in ipairs(vim.g.vimwiki_list) do
@@ -13,8 +19,8 @@ local get_vimwiki_list = function(opts)
 	return list
 end
 
-local vimwiki_list_picker = function(opts)
-	pickers.new({}, {
+function M.vimwiki_list_picker(opts)
+	local picker = pickers.new({}, {
 		prompt_title = 'Vimwiki List',
 		finder = finders.new_table {
 			results = get_vimwiki_list(opts),
@@ -42,5 +48,6 @@ local vimwiki_list_picker = function(opts)
 			end)
 			return true
 		end,
-	}):find()
+	})
+	picker:find()
 end
