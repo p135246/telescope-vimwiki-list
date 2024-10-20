@@ -51,3 +51,5 @@ function M.vimwiki_list_picker(opts)
 	})
 	picker:find()
 end
+
+return M

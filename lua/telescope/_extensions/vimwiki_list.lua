@@ -15,6 +15,6 @@ return telescope.register_extension {
 		end
 	end,
 	exports = {
-		vimwiki_list_picker = vimwiki_list.vimwiki_list_picker,
+		picker = vimwiki_list.vimwiki_list_picker,
 	},
 }
